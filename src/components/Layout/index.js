@@ -1,25 +1,24 @@
 import React from "react";
-import s from "./Layout.module.css";
+import s from "./style.module.css";
 
 const Layout = (props) => {
+  console.log(props);
+
+
+
   return (
-    <section className={s.root} id={props.id}>
+    <section className={s.root} id={props.id} style={{backgroundImage: props.urlBg ? `url(${props.urlBg})` : 'none', backgroundColor: props.colorBg ? props.colorBg : 'none'}}>
       <div
         className="wrapper"
-        style={
-          props.colorBg
-            ? { backgroundColor: props.colorBg }
-            : {
-                backgroundImage: props.urlBg,
-              }
-        }
+        
+        
       >
         <article>
           <div className={s.title}>
             <h3>{props.title}</h3>
             <span className={s.separator}></span>
           </div>
-          <div className={s.desc + ' ' + s.full}>
+          <div className={`${s.desc} ${s.full}`}>
             <p>{props.desc}</p>
           </div>
         </article>

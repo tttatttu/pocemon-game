@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./style.module.css";
+import cn from 'classnames'
 
 const Layout = (props) => {
   // console.log(props);
@@ -20,7 +21,7 @@ const Layout = (props) => {
             <h3>{props.title}</h3>
             <span className={s.separator}></span>
           </div>
-          <div className={`${s.desc} ${s.full}`}>{props.children}</div>
+          <div className={cn(s.desc, s.full)}>{props.children}</div>
         </article>
       </div>
     </section>

@@ -1,6 +1,6 @@
 {
   "name": "pacemon-game",
-  "homepage": "https://github.com/tttatttu/pocemon-game",
+  "homepage": "https://tttatttu.github.io/pocemon-game",
   "version": "0.0.1",
   "private": true,
   "repository": {
@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

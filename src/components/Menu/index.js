@@ -1,15 +1,17 @@
-import React, {useState} from "react";
-import s from './style.module.css'
-import cn from 'classnames'
+import React, { useState } from "react";
+import s from "./style.module.css";
+import cn from "classnames";
 
-const Menu = ({onClickMenu, isActive}) => {
-
+const Menu = ({ onClickMenu, isActive }) => {
   const handleClick = () => {
-    onClickMenu && onClickMenu(!isActive)
-  }
+    onClickMenu && onClickMenu(!isActive);
+  };
 
   return (
-    <div className={cn(s.menuContainer, {[s.active]: isActive, [s.deactive]: isActive})} onClick={handleClick}>
+    <div
+      className={cn(s.menuContainer, isActive ? s.active : s.deactive)}
+      onClick={handleClick}
+    >
       <div className={s.overlay} />
       <div className={s.menuItems}>
         <ul>

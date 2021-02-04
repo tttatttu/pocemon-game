@@ -10,7 +10,7 @@ import cn from "classnames";
 
 const App = () => {
   const match = useRouteMatch("/");
-  console.log(match);
+
   return (
     <Switch>
       <Route path='/404' render={() => <h1> 404 Not Found</h1>} />

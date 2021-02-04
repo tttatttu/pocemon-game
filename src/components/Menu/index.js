@@ -2,25 +2,7 @@ import React, { useState } from "react";
 import {Link} from 'react-router-dom'
 import s from "./style.module.css";
 import cn from "classnames";
-
-const MENU = [
-  {
-    title: "HOME",
-    to: "/welcome",
-  },
-  {
-    title: "GAME",
-    to: "/game",
-  },
-  {
-    title: "ABOUT",
-    to: "/about",
-  },
-  {
-    title: "CONTACT",
-    to: "/contact",
-  },
-];
+import { MENU } from '../../constans/MENU';
 
 const Menu = ({ isOpen }) => {
 

@@ -2,17 +2,21 @@ import React, { useState } from "react";
 import { POKEMONS } from "../../constans/POKEMONS";
 import s from "./style.module.css";
 import PokemonCard from "../../components/PokemonCard/index";
+import { useHistory } from 'react-router-dom';
+import HomePage from '../HomePage/index';
 
 const GamePage = () => {
   const [Pocemons, setPocemons] = useState(POKEMONS);
 
-  const handleClick = () => {};
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/')
+  };;
 
   const handleClickCard = (id) => {
     setPocemons((prevState) => {
       const newPocemons = JSON.parse(JSON.stringify(prevState));
-
-      console.log(newPocemons);
 
       return newPocemons.map((card) => {
         if (card.id === id) {
@@ -25,8 +29,6 @@ const GamePage = () => {
 
   return (
     <>
-      <button onClick={handleClick}>Back</button>
-
       <div className={s.flex}>
         {Pocemons.map((item) => (
           <PokemonCard
@@ -41,6 +43,8 @@ const GamePage = () => {
           />
         ))}
       </div>
+
+      {history.location.pathname === '/game' ? (<button onClick={handleClick} className={s.button}>Go HOME</button>) : null}
     </>
   );
 };

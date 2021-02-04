@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 import BgLayout from "../../assets/bg1.jpg";
 import s from "./style.module.css";
 import Header from "../../components/Header/index";
 import Layout from "../../components/Layout/index";
 import PokemonCard from "../../components/PokemonCard/index";
 import Footer from "../../components/Footer/index";
-import { POKEMONS } from '../../constans/POKEMONS';
-
-
+import { POKEMONS } from "../../constans/POKEMONS";
+import GamePage from "../GamePage/index";
 
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {
@@ -17,7 +16,6 @@ const HomePage = ({ onChangePage }) => {
 
   return (
     <div>
-      
       <Header
         title={"Pokemon game"}
         desc={"pause, strain your brain"}
@@ -49,18 +47,7 @@ const HomePage = ({ onChangePage }) => {
         urlBg={""}
         colorBg={"#f2ef94"}
       >
-        {/* <div className={s.flex}>
-          {POKEMONS.map((item) => (
-            <PokemonCard
-              key={item.id}
-              name={item.name}
-              img={item.img}
-              id={item.id}
-              type={item.type}
-              values={item.values}
-            />
-          ))}
-        </div> */}
+        <GamePage />
       </Layout>
       <Layout id={3} title="Layout3" desc="test3" urlBg={BgLayout} colorBg={""}>
         <p>
@@ -81,7 +68,6 @@ const HomePage = ({ onChangePage }) => {
           the player's color instead.{" "}
         </p>
       </Layout>
-      
     </div>
   );
 };

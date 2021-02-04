@@ -161,3 +161,14 @@
         width: 100%;
     }
 }
+
+.button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #fafafa;
+    font-size: 24px;
+}
+
+.button:hover {
+    background-color: #f300b4;
+}

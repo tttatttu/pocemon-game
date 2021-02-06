@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./style.module.css";
 import CardBackedPicture from "../../assets/card-back-side.jpg";
 import cn from "classnames";

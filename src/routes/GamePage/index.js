@@ -31,10 +31,13 @@ const GamePage = () => {
     if (card[0] === newKey) {
       console.log("Такой покемон уже есть в куче");
     } else {
-      database.ref("pokemons/" + newKey).set(card[1]);
+      database.ref("pokemons/" + newKey).set(card[1]).then(setPokemons (prevState => {
+        return {...prevState, [newKey]: card[1]}
+
+      }));
     }
 
-    database.ref("pokemons").update(pokemons);
+    // database.ref("pokemons").update(pokemons);
   };
 
   const handleClickCard = (id) => {
@@ -45,11 +48,26 @@ const GamePage = () => {
 
         if (pokemon.id === id) {
           pokemon.active = !pokemon.active;
+
+          // console.log(pokemon);
+
+          // database.ref("pokemons/" + pokemon[0]).set({...pokemon[1]}).then(setPokemons (prevState => {
+          //   return {...prevState, [pokemon[0]]: pokemon[1]}
+    
+          // }));
+          
         }
 
+        // const card = database.ref("pokemons/" + pokemon.id).set({...pokemon}).then(setPokemons(prevState => {
+        //   console.log(prevState);
+        //   return {...prevState,  pokemon}
+  
+        // }));
+        // console.log(card);
         setCard(item);
 
         acc[item[0]] = pokemon;
+        // setCard(acc);
 
         
 

@@ -1,6 +1,6 @@
 {
   "name": "pacemon-game",
-  "homepage": "https://tttatttu.github.io",
+  "homepage": "https://tttatttu.github.io/pocemon-game",
   "version": "0.0.1",
   "private": true,
   "main": "./src/index.js",

@@ -3,6 +3,7 @@
   "homepage": "https://tttatttu.github.io/pocemon-game",
   "version": "0.0.1",
   "private": true,
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tttatttu/pocemon-game.git"
@@ -20,6 +21,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "classnames": "^2.2.6",
+    "firebase": "^8.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

@@ -1,11 +1,7 @@
 import React from "react";
 import BgLayout from "../../assets/bg1.jpg";
-import s from "./style.module.css";
 import Header from "../../components/Header/index";
 import Layout from "../../components/Layout/index";
-import PokemonCard from "../../components/PokemonCard/index";
-import Footer from "../../components/Footer/index";
-import { POKEMONS } from "../../constans/POKEMONS";
 import GamePage from "../GamePage/index";
 
 const HomePage = ({ onChangePage }) => {

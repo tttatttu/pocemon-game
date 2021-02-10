@@ -1,4 +1,4 @@
-# [Pokemon game React](https://tttatttu.github.io/pocemon-game) **
+# [Pokemon game React](https://tttatttu.github.io) **
 ** для просмотра проекта, кликните на название
 
 ## Версия 0.0.1

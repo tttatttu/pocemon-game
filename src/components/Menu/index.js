@@ -4,7 +4,10 @@ import s from "./style.module.css";
 import cn from "classnames";
 import { MENU } from '../../constans/MENU';
 
-const Menu = ({ isOpen }) => {
+const Menu = ({ isOpen, onClickMenu }) => {
+  const handleCloseMenu = () => {
+    onClickMenu()
+  }
 
   return (
     <div
@@ -18,7 +21,7 @@ const Menu = ({ isOpen }) => {
         <ul>
           {MENU.map(({ title, to }, index) => (
             <li key={index}>
-              <Link to={to}>{title}</Link>
+              <Link to={to} onClick={handleCloseMenu}>{title}</Link>
             </li>
           ))}
         </ul>

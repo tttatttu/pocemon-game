@@ -7,7 +7,7 @@ import PokemonCard from "../../../../components/PokemonCard/index";
 
 const BoardPage = () => {
   const { pokemons } = useContext(PokemonContext);
-  console.log(pokemons);
+  
   return (
     <div className={s.root}>
       <div className={s.playerOne}>

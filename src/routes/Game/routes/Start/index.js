@@ -11,7 +11,6 @@ const StartPage = () => {
   const firebase = useContext(FireBaseContext);
   const pokemonsContext = useContext(PokemonContext);
   const history = useHistory();
-  console.log(history);
   const [pokemons, setPokemons] = useState({});
 
   useEffect(() => {
@@ -46,14 +45,15 @@ const StartPage = () => {
 
   return (
     <>
-      <button
-        className={s.button}
-        onClick={handleStartGameClick}
-        disabled={Object.keys(pokemonsContext.pokemons).length < 5}
-      >
-        Start Game
-      </button>
-
+      {history.location.pathname === "/game" ? (
+        <button
+          className={s.button}
+          onClick={handleStartGameClick}
+          disabled={Object.keys(pokemonsContext.pokemons).length < 5}
+        >
+          Start Game
+        </button>
+      ) : null}
       <div className={s.flex}>
         {Object.entries(pokemons).map(
           ([key, { name, img, id, type, values, selected }]) => (

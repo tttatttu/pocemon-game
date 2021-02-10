@@ -10,8 +10,8 @@ import { PokemonContext } from "../../../../context/pokemonComtext";
 const StartPage = () => {
   const firebase = useContext(FireBaseContext);
   const pokemonsContext = useContext(PokemonContext);
-  console.log(pokemonsContext);
   const history = useHistory();
+  console.log(history);
   const [pokemons, setPokemons] = useState({});
 
   useEffect(() => {

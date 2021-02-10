@@ -1,7 +1,10 @@
 .flex {
+    margin: 40px;
     display: grid;
-    grid-template-columns: auto auto auto;
     grid-gap: 40px;
+    grid-template-columns: 250px 250px 250px;
+    grid-auto-rows: 380px;
+    justify-content: center;
 }
 
 .button {
@@ -18,7 +21,8 @@
 }
 
 .card {
-    width: 100%;
+    
+    width: 300px;
     height: 380px;
     cursor: pointer;
 }

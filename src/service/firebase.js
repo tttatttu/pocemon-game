@@ -23,6 +23,10 @@ class Firebase {
     })
   }
 
+  offPokemonSoket = () => {
+    this.database.ref('pokemons').off()
+  }
+
   getPokemonsOnce = async () => {
     return await this.database
       .ref("pokemons")
@@ -34,12 +38,12 @@ class Firebase {
     this.database.ref(`pokemons/${key}`).set(pokemon);
   };
 
-  addPokemon = (data) => {
+  addPokemon = (data, cb) => {
     const newKey = this.database.ref().child("pokemons").push().key;
 
     this.database
       .ref("pokemons/" + newKey)
-      .set(data);
+      .set(data).then(() => cb && cb());
   };
   
 }

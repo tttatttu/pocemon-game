@@ -2,7 +2,8 @@ import React from "react";
 import BgLayout from "../../assets/bg1.jpg";
 import Header from "../../components/Header/index";
 import Layout from "../../components/Layout/index";
-import GamePage from "../Game/index";
+import GamePage from '../Game/index';
+
 
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {
@@ -43,7 +44,7 @@ const HomePage = ({ onChangePage }) => {
         urlBg={""}
         colorBg={"#f2ef94"}
       >
-        {/* <GamePage /> */}
+        <GamePage />
       </Layout>
       <Layout id={3} title="Layout3" desc="test3" urlBg={BgLayout} colorBg={""}>
         <p>

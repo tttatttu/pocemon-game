@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import s from "./style.module.css";
+import React, { useState } from "react";
+// import s from "./style.module.css";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import StartPage from "../Game/routes/Start/index";
@@ -7,25 +7,37 @@ import BoardPage from "../Game/routes/Board/index";
 import FinishPage from "../Game/routes/Finish/index";
 import { useRouteMatch } from "react-router-dom";
 import { PokemonContext } from "../../context/pokemonComtext";
-import Firebase from "../../service/firebase";
 
 const GamePage = () => {
   const match = useRouteMatch();
+  const [selectedPokemons, setSelectedPokemons] = useState({});
 
-  const [pokemon, setPokemon] = useState([]);
+  const handleSelectedPokemons = (key, pokemon) => {
+    setSelectedPokemons((prevState) => {
+      if (prevState[key]) {
+        const copyState = { ...prevState };
+        delete copyState[key];
 
-  // minimize: {'max-width': '30px', 'max-height': '40px'}
+        console.log(copyState);
+        return copyState;
+      }
 
-  const handlerIsSelect = (val) => {
-    setPokemon(val);
+      return {
+        ...prevState,
+        [key]: pokemon,
+      };
+    });
   };
 
-  console.log(pokemon);
-
   return (
-    <PokemonContext.Provider value={{ pokemon, inSelect: handlerIsSelect }}>
+    <PokemonContext.Provider
+      value={{
+        pokemons: selectedPokemons,
+        onSelectedPokemons: handleSelectedPokemons,
+      }}
+    >
       <Switch>
-        <Route path={`${match.path}/`} exact component={StartPage} />
+        <Route path={`${match.path}/game`} exact component={StartPage} />
         <Route path={`${match.path}/board`} component={BoardPage} />
         <Route path={`${match.path}/finish`} component={FinishPage} />
       </Switch>

@@ -2,7 +2,8 @@ import React from "react";
 import BgLayout from "../../assets/bg1.jpg";
 import Header from "../../components/Header/index";
 import Layout from "../../components/Layout/index";
-import GamePage from "../GamePage/index";
+import GamePage from '../Game/index';
+
 
 const HomePage = ({ onChangePage }) => {
   const handleClickButton = (page) => {

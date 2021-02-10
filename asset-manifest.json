@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.f18ef1bf.chunk.css",
-    "main.js": "/static/js/main.8bbb01e8.chunk.js",
-    "main.js.map": "/static/js/main.8bbb01e8.chunk.js.map",
+    "main.css": "/static/css/main.d3d78f26.chunk.css",
+    "main.js": "/static/js/main.d0833392.chunk.js",
+    "main.js.map": "/static/js/main.d0833392.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e72e2ac6.js",
     "runtime-main.js.map": "/static/js/runtime-main.e72e2ac6.js.map",
     "static/js/2.b7634755.chunk.js": "/static/js/2.b7634755.chunk.js",
     "static/js/2.b7634755.chunk.js.map": "/static/js/2.b7634755.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.f18ef1bf.chunk.css.map": "/static/css/main.f18ef1bf.chunk.css.map",
+    "static/css/main.d3d78f26.chunk.css.map": "/static/css/main.d3d78f26.chunk.css.map",
     "static/js/2.b7634755.chunk.js.LICENSE.txt": "/static/js/2.b7634755.chunk.js.LICENSE.txt",
     "static/media/bg1.339e2b02.jpg": "/static/media/bg1.339e2b02.jpg",
     "static/media/style.module.css": "/static/media/card-back-side.3bc67f21.jpg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.e72e2ac6.js",
     "static/js/2.b7634755.chunk.js",
-    "static/css/main.f18ef1bf.chunk.css",
-    "static/js/main.8bbb01e8.chunk.js"
+    "static/css/main.d3d78f26.chunk.css",
+    "static/js/main.d0833392.chunk.js"
   ]
 }

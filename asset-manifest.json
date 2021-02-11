@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pocemon-game/static/css/main.6dfa244e.chunk.css",
-    "main.js": "/pocemon-game/static/js/main.d0833392.chunk.js",
-    "main.js.map": "/pocemon-game/static/js/main.d0833392.chunk.js.map",
+    "main.js": "/pocemon-game/static/js/main.4aef0ea2.chunk.js",
+    "main.js.map": "/pocemon-game/static/js/main.4aef0ea2.chunk.js.map",
     "runtime-main.js": "/pocemon-game/static/js/runtime-main.05371ae0.js",
     "runtime-main.js.map": "/pocemon-game/static/js/runtime-main.05371ae0.js.map",
     "static/js/2.12cf9a4d.chunk.js": "/pocemon-game/static/js/2.12cf9a4d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.05371ae0.js",
     "static/js/2.12cf9a4d.chunk.js",
     "static/css/main.6dfa244e.chunk.css",
-    "static/js/main.d0833392.chunk.js"
+    "static/js/main.4aef0ea2.chunk.js"
   ]
 }

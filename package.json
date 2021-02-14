@@ -1,11 +1,12 @@
 {
-  "name": "pacemon-game",
-  "homepage": "https://tttatttu.github.io/",
+  "name": "pakemon-game",
+  "homepage": "https://tttatttu.github.io/pokemon-game",
   "version": "0.0.1",
   "private": true,
+  "baseUrl": "./src",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tttatttu/pocemon-game.git"
+    "url": "git+https://github.com/tttatttu/pokemon-game.git"
   },
   "scripts": {
     "start": "react-scripts start",

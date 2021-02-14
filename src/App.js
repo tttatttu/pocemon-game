@@ -32,6 +32,7 @@ const App = () => {
                 <Route path="/game" component={GamePage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/contact" component={ContactPage} />
+                <Route path="/pokemon-game" component={HomePage} />
                 {/* <Route path="/welcome" component={HomePage} /> */}
                 <Route
                   path="/about"

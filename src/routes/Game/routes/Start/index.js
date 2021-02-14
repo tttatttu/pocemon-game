@@ -5,11 +5,12 @@ import { useHistory } from "react-router-dom";
 
 import PokemonCard from "../../../../components/PokemonCard/index";
 import { FireBaseContext } from "../../../../context/firebaseContext";
-import { PokemonContext } from "../../../../context/pokemonComtext";
+import { PokemonsContext } from '../../../../context/pokemonsContext';
+
 
 const StartPage = () => {
   const firebase = useContext(FireBaseContext);
-  const pokemonsContext = useContext(PokemonContext);
+  const pokemonsContext = useContext(PokemonsContext);
   const history = useHistory();
   const [pokemons, setPokemons] = useState({});
 

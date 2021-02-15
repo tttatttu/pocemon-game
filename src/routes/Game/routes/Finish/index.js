@@ -2,12 +2,22 @@ import React, { useContext } from "react";
 import s from "./style.module.css";
 import { PokemonsContext } from "../../../../context/pokemonsContext";
 import PokemonCard from "../../../../components/PokemonCard/index";
+import { FireBaseContext } from "../../../../context/firebaseContext";
+import { useHistory } from 'react-router-dom';
 
 const FinishPage = () => {
   const { player1, player2 } = useContext(PokemonsContext);
+  const firebase = useContext(FireBaseContext);
+  const history = useHistory();
 
-  const setChoiceCard = (e) => {
-    console.log(e);
+  const setChoiceCard = () => {
+    history.push("/game");
+  };
+
+  const handleClickCard = (key) => {
+    const newPokemons = { ...player2[key] };
+
+    firebase.addPokemon(newPokemons);
   };
 
   return (
@@ -51,7 +61,7 @@ const FinishPage = () => {
               isActive={true}
               isSelected={selected}
               onClickCard={() => {
-                console.log("object");
+                handleClickCard(key);
               }}
             />
           )

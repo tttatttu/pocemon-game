@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import s from "./style.module.css";
 import { PokemonsContext } from "../../../../context/pokemonsContext";
 import PokemonCard from "../../../../components/PokemonCard/index";
@@ -6,18 +6,46 @@ import { FireBaseContext } from "../../../../context/firebaseContext";
 import { useHistory } from 'react-router-dom';
 
 const FinishPage = () => {
-  const { player1, player2 } = useContext(PokemonsContext);
+  const { player1, player2, onSelectedPokemons } = useContext(PokemonsContext);
   const firebase = useContext(FireBaseContext);
   const history = useHistory();
+  const [pokemons, setPokemons] = useState(player2);
 
   const setChoiceCard = () => {
     history.push("/game");
+    // firebase.addPokemon(newPokemons);
   };
 
-  const handleClickCard = (key) => {
+  const handleClickCard = (key, item) => {
     const newPokemons = { ...player2[key] };
+    console.log({...item});
+    
 
-    firebase.addPokemon(newPokemons);
+    
+
+    // setPokemons((prevState) => ({
+    //     ...prevState,
+    //     [key]: {
+    //       ...prevState[key],
+    //       selected: !prevState[key].selected,
+    //     },
+    //   }));
+    //   console.log(newPokemons);
+  };
+
+  const handleChangeSelected = (key) => {
+    const pokemon = { ...pokemons[key] };
+
+    onSelectedPokemons(key, pokemon);
+
+    setPokemons((prevState) => ({
+      ...prevState,
+      [key]: {
+        ...prevState[key],
+        selected: !prevState[key].selected,
+      },
+    }));
+    console.log(pokemons[key]);
   };
 
   return (
@@ -36,7 +64,7 @@ const FinishPage = () => {
               isActive={true}
               isSelected={selected}
               onClickCard={() => {
-                console.log("object");
+                console.log("Мои герои!");
               }}
             />
           )
@@ -61,7 +89,7 @@ const FinishPage = () => {
               isActive={true}
               isSelected={selected}
               onClickCard={() => {
-                handleClickCard(key);
+                handleChangeSelected(key);
               }}
             />
           )

@@ -20,7 +20,6 @@ const GamePage = () => {
         const copyState = { ...prevState };
         delete copyState[key];
 
-        console.log(copyState);
         return copyState;
       }
 
@@ -33,7 +32,7 @@ const GamePage = () => {
 
   const handleCardsPlayer = (player1, player2) => {
     setPlayer1Cards(player1);
-    setPlayer2Cards(player2)
+    setPlayer2Cards(player2);
   };
 
   return (
@@ -43,7 +42,7 @@ const GamePage = () => {
         onSelectedPokemons: handleSelectedPokemons,
         onGetCardsPlayer: handleCardsPlayer,
         player1: player1Cards,
-        player2: player2Cards
+        player2: player2Cards,
       }}
     >
       <Switch>

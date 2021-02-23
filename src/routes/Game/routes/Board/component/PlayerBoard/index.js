@@ -10,6 +10,7 @@ const PlayerBoard = ({  player, cards, onClickCard }) => {
     <>
       {cards.map((item) => (
         <div
+          key={item.id}
           className={cn(s.cardBoard, { [s.selected]: isSelected === item.id })}
           onClick={() => {
             setSelected(item.id);

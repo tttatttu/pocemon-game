@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyDRWQmSXQ5N8bQjUygBrOmNstP5AIof7Ws",
   authDomain: "pocemon-game.firebaseapp.com",
@@ -11,6 +12,7 @@ const firebaseConfig = {
   appId: "1:627601982488:web:403b35dd3df4ab96002f6d",
 };
 firebase.initializeApp(firebaseConfig);
+
 class Firebase {
   constructor() {
     this.fire = firebase;
@@ -48,4 +50,6 @@ class Firebase {
   
 }
 
-export default Firebase;
+const FirebaseClass = new Firebase()
+
+export default FirebaseClass;

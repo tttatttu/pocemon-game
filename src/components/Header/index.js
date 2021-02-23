@@ -1,12 +1,20 @@
 import React from "react";
 import {useHistory} from 'react-router-dom'
 import s from "./style.module.css";
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { plusAction, selectCount } from '../../store/counter';
 
 const Header = ({ title, desc, onClickButton }) => {
   const history = useHistory();
 
+  // const count = useSelector(selectCount)
+  // const dispatch = useDispatch()
+  // console.log('count', count);
+
   const handleClick = () => {
     history.push('/game')
+    // dispatch(plusAction(1))
   };
 
   return (

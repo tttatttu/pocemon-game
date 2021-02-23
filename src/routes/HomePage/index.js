@@ -3,28 +3,38 @@ import BgLayout from "../../assets/bg1.jpg";
 import Header from "../../components/Header/index";
 import Layout from "../../components/Layout/index";
 import GamePage from '../Game/index';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { plusAction } from '../../store/counter';
 
 
 const HomePage = ({ onChangePage }) => {
+  // const history = useHistory()
+  // const count = useSelector((state) => state.value)
+  // const dispatch = useDispatch()
+  // console.log('count', count);
+
   const handleClickButton = (page) => {
     console.log("<HomePage />");
     onChangePage && onChangePage(page);
+
   };
 
   return (
     <div>
       <Header
-        title={"Pokemon game"}
-        desc={"pause, strain your brain"}
+        title="Pokemon game"
+        desc="pause, strain your brain"
         onClickButton={handleClickButton}
       />
       <Layout id={1} title="Layout1" desc="test1" urlBg={BgLayout} colorBg={""}>
         <p>
           In the game two players face off against one another, one side playing
-          as "blue", the other as "red" on a 3x3 grid. Each player has five
-          cards in a hand and the aim is to capture the opponent's cards by
-          turning them into the player's own color of red or blue.
+          as "blue", the other as "red" on a 3x3 grid. 
         </p>
+        <p>Each player has five
+          cards in a hand and the aim is to capture the opponent's cards by
+          turning them into the player's own color of red or blue.</p>
         <p>
           To win, a majority of the total ten cards played (including the one
           card that is not placed on the board) must be of the player's card

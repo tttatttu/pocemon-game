@@ -6,11 +6,13 @@ import StartPage from "../Game/routes/Start/index";
 import BoardPage from "../Game/routes/Board/index";
 import FinishPage from "../Game/routes/Finish/index";
 import { useRouteMatch } from "react-router-dom";
-import { PokemonContext } from "../../context/pokemonComtext";
+import { PokemonsContext } from "../../context/pokemonsContext";
 
 const GamePage = () => {
   const match = useRouteMatch();
   const [selectedPokemons, setSelectedPokemons] = useState({});
+  const [player1Cards, setPlayer1Cards] = useState({});
+  const [player2Cards, setPlayer2Cards] = useState({});
 
   const handleSelectedPokemons = (key, pokemon) => {
     setSelectedPokemons((prevState) => {
@@ -18,7 +20,6 @@ const GamePage = () => {
         const copyState = { ...prevState };
         delete copyState[key];
 
-        console.log(copyState);
         return copyState;
       }
 
@@ -29,11 +30,19 @@ const GamePage = () => {
     });
   };
 
+  const handleCardsPlayer = (player1, player2) => {
+    setPlayer1Cards(player1);
+    setPlayer2Cards(player2);
+  };
+
   return (
-    <PokemonContext.Provider
+    <PokemonsContext.Provider
       value={{
         pokemons: selectedPokemons,
         onSelectedPokemons: handleSelectedPokemons,
+        onGetCardsPlayer: handleCardsPlayer,
+        player1: player1Cards,
+        player2: player2Cards,
       }}
     >
       <Switch>
@@ -41,7 +50,7 @@ const GamePage = () => {
         <Route path={`${match.path}/board`} component={BoardPage} />
         <Route path={`${match.path}/finish`} component={FinishPage} />
       </Switch>
-    </PokemonContext.Provider>
+    </PokemonsContext.Provider>
   );
 };
 

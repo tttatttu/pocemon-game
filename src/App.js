@@ -11,14 +11,15 @@ import AboutPage from "./routes/AboutPage";
 import ContactPage from "./routes/ContactPage/index";
 import { FireBaseContext } from "./context/firebaseContext";
 
-
 import GamePage from "./routes/Game/index";
 import FirebaseClass from "./service/firebase";
 
 const App = () => {
   const location = useLocation();
   const isPadding =
-    location.pathname === "/" || location.pathname === "/game/board" || location.pathname === "/pokemon-game";
+    location.pathname === "/" ||
+    location.pathname === "/game/board" ||
+    location.pathname === "/pokemon-game";
 
   return (
     <FireBaseContext.Provider value={FirebaseClass}>
@@ -33,7 +34,7 @@ const App = () => {
                 <Route path="/game" component={GamePage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/contact" component={ContactPage} />
-                <Route path="/pokemon-game" component={HomePage} />
+                <Route path="/pokemon-game/" component={HomePage} />
                 {/* <Route path="/welcome" component={HomePage} /> */}
                 <Route
                   path="/about"
